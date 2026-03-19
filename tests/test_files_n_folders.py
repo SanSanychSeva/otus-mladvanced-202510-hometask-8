@@ -6,34 +6,32 @@ Description:
 
 import os
 
-from src.files_n_folders import MODELS_FOLDER, PREPROC_FOLDER, PROJECT_FOLDER
-from src.files_n_folders import CONFIG_FOLDER, DATASET_NAME, DATA_FOLDER
+from src.files_n_folders import *
 
-def check_data_folder():
+def test_files_n_folders_f():
+    assert type(files_n_folders_f()) is dict
+
     assert os.path.exists(os.path.join(
                                        PROJECT_FOLDER, 
                                        DATA_FOLDER
                         ))
     
-def check_model_folder():
     assert os.path.exists(os.path.join(
                                        PROJECT_FOLDER, 
                                        MODELS_FOLDER
                         ))
     
-def check_preproc_folder():
     assert os.path.exists(os.path.join(
                                        PROJECT_FOLDER, 
+                                       MODELS_FOLDER,
                                        PREPROC_FOLDER
                         ))
     
-def check_config_folder():
     assert os.path.exists(os.path.join(
                                        PROJECT_FOLDER, 
                                        CONFIG_FOLDER
                         ))
 
-def check_dataset():
     assert os.path.exists(os.path.join(
                                        PROJECT_FOLDER, 
                                        DATA_FOLDER, 
