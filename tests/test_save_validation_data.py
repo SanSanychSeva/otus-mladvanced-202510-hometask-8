@@ -1,9 +1,14 @@
+'''
+Module: test_save_validation_data.py
+Description:
+    This module contains a test function for the save_validation_data_f function.
+'''
 import numpy as np
 import os
 
 from src.files_n_folders import PROJECT_FOLDER, DATA_FOLDER
 from src.preproc_train_dataset import preproc_dataset_f
-from src.save_validation_data import keep_validation_data_f
+from src.save_validation_data import save_validation_data_f
 from src.read_train_dataset import read_train_dataset_f
 from src.eda_train_dataset import run_eda_train_dataset_f
 
@@ -12,7 +17,7 @@ def test_save_validation_data_f():
     num_flds, cat_flds, num_cat_flds = run_eda_train_dataset_f(ddf)
     Xy = preproc_dataset_f(ddf, num_flds, cat_flds, num_cat_flds)
 
-    X_train, y_train = keep_validation_data_f(Xy)
+    X_train, y_train = save_validation_data_f(Xy)
 
     val_Xy_save_file_name = os.path.join(
         PROJECT_FOLDER, 

@@ -1,5 +1,7 @@
 '''
-This module contains the tests for the pre-processing of the training dataset
+Module: test_preproc_train_dataset.py
+Description:
+    This module contains the tests for the pre-processing of the training dataset
 '''
 
 import os

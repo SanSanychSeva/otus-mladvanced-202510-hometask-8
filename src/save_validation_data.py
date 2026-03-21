@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 
 from src.files_n_folders import DATA_FOLDER, PROJECT_FOLDER
 
-def keep_validation_data_f(Xy:'np.ndarray', val_size:float=0.2) -> tuple:
+def save_validation_data_f(Xy:'np.ndarray', val_size:float=0.2) -> tuple:
     """   
     splits the Xy-dataset into X and y train and val sets, 
     saving the validation data to data folder and 
