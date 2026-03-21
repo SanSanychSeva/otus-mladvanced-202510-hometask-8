@@ -14,7 +14,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 from src.files_n_folders import PROJECT_FOLDER, MODELS_FOLDER, PREPROC_FOLDER
 
-def preproc_num_fields_f(df, num_flds):
+def preproc_num_fields_f(df:'pd.DataFrame', num_flds:list) -> 'np.ndarray':
     '''
     transforms the numerical fields by standardizing them and saves the scaler for later use on the test dataset
     '''
@@ -31,11 +31,11 @@ def preproc_num_fields_f(df, num_flds):
     save_fld_handler(scaler, scaler_save_file_name, compress=True)
     return X_num
 
-def preproc_cat_fields_f(df, cat_flds):
+def preproc_cat_fields_f(df:'pd.DataFrame', cat_flds:list) -> 'np.ndarray':
     '''
     transforms the categorical fields by one-hot encoding them and saves the encoder for later use on the test dataset
     '''
-    encoder = OneHotEncoder(sparse=False)
+    encoder = OneHotEncoder(sparse_output=False)
     X_cat = encoder.fit_transform(df[cat_flds])
 
     encoder_save_file_name = os.path.join(
