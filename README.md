@@ -10,7 +10,7 @@
 * .\data - initial datasets as well as intermediate data matricies - like validation date extracted before training
 * .\models - the trained model save
 * .\models/preproc - preproc objects fitted on trained data saves: scalers for numerical and encoders for categorical
-* .\config - not used but checked by tests for existance
+* .\config - not used but checked by tests for existence
 * .\src - code for all functions used by pipelines
 * .\tests - pytest code for checking src-code
-* .\notebooks - jupiter written DS ideas implemented into production project
+* .\notebooks - jupyter written DS ideas implemented into production project
