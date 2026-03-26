@@ -60,4 +60,19 @@ def preproc_dataset_f(df:'pd.DataFrame',
     X_cat = preproc_cat_fields_f(df, cat_flds)
     X_bin = df[bin_flds].values
 
+    fields_type_save_file_name = os.path.join(
+        PROJECT_FOLDER, 
+        MODELS_FOLDER,
+        PREPROC_FOLDER, 
+        'flds_types_save.bin'
+   )
+
+    flds_types_dict = {
+        'num_flds': num_flds,
+        'cat_flds': cat_flds,
+        'bin_flds': bin_flds
+    }
+
+    save_fld_handler(flds_types_dict, fields_type_save_file_name, compress=True)
+
     return np.concatenate([X_num, X_cat, X_bin], axis=1)
