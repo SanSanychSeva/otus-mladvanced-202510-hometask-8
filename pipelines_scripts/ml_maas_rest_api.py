@@ -1,3 +1,9 @@
+'''
+Script: ml_maas_rest_api.py
+Description: 
+    This script implements a REST API for a Machine Learning as a Service (MLaaS)
+'''
+
 import pandas as pd
 from flask import Flask, jsonify, request
 
@@ -39,4 +45,4 @@ def prediction():
     return jsonify({'diagnosis': diag})
 
 if __name__ == "__main__":
-    ml_maas.run()
+    ml_maas_rest_api.run()
