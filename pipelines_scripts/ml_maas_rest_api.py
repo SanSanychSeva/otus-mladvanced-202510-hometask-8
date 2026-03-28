@@ -6,6 +6,7 @@ Description:
 
 import pandas as pd
 from flask import Flask, jsonify, request
+from loguru import logger
 
 from src.stand_alone_inference import load_model_n_predict
 
@@ -23,16 +24,27 @@ def prediction():
     '''
     try:
         data = request.get_json()
+        logger.debug(
+            f"Flask service 'submit_analysis' calls function 'prediction': reporting received data: {data}"
+            )
+        for k in data.keys():
+            data[k] = [data[k]] 
     except:
         return jsonify({'error': 'Invalid JSON data in request body'}), 400
 
     try:
         new_data = pd.DataFrame(data)
+        logger.debug(
+            "Flask service 'submit_analysis' / function 'prediction': reporting data converted to DataFrame"
+            )
     except:
-        return jsonify({'error': 'Error occurred while processing the data'}), 400
+        return jsonify({'error': 'Error occurred while converting JSON data to DataFrame'}), 400
 
     try:
         pred = load_model_n_predict(new_data)
+        logger.debug(
+            f"Flask service 'submit_analysis' / function 'prediction': reporting prediction result: {pred}"
+            )
     except:
         return jsonify({'error': 'either bad values or invalid field names - consult service description'}
                        ), 400
