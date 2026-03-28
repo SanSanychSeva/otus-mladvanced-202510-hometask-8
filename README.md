@@ -10,9 +10,9 @@
 
 # Project folder structure (checked by tests too):
 * .\data - initial datasets as well as intermediate data matricies - like validation date extracted before training
-* .\models - the trained model save
-* .\models/preproc - preproc objects fitted on trained data saves: scalers for numerical and encoders for categorical, as well as raw dataset fields split to numerical, categorical and binary groups for preprocessing
-* .\config - not used but checked by tests for existence
+* .\models (all in .gitignore) - the trained model save
+* .\models/preproc (all in .gitignore) - preproc objects fitted on trained data saves: scalers for numerical and encoders for categorical, as well as raw dataset fields split to numerical, categorical and binary groups for preprocessing
+* .\config (empty - not in git) - not used but checked by tests for existence
 * .\src - code for all functions used by pipelines
 * .\tests - pytest code for checking src-code
 * .\notebooks - jupyter written DS ideas implemented into production project

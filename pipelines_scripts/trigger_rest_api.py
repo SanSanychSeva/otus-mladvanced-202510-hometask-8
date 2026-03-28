@@ -34,6 +34,7 @@ url = 'http://localhost:5000/submit_analysis'
 # Test 0: Check if the API is reachable first
 try:
     response = requests.get(url)
+    print()
     print("REST API server is reachable. Status code:", response.status_code)
     print('Proceeding with ML-model testing...')
     print()
@@ -41,16 +42,19 @@ except:
     print("Error occurred while checking API reachability:")
     print("Please check if the REST API server is running at the specified URL:", url)
     os._exit(1)
+print('-' * 80)
 
 # Test 1: Send data for target == 1
 response_1 = requests.post(url, json=row_target_1)
-print("Test for patient marked as having cancer:")
-print("Request data simulated from the randomly selected row no.", idx_1, ":", row_target_1)
-print("Response:", response_1.json())
+print("\nTest for patient marked as having cancer:")
+print("\nRequest data simulated from the randomly selected row no.", idx_1, ":", row_target_1)
+print("\nResponse:", response_1.json())
 print()
+print('-' * 80)
 
 # Test 2: Send data for target == 0
 response_0 = requests.post(url, json=row_target_0)
-print("Test for patient marked as not having cancer:")
-print("Request data simulated from the randomly selected row no.", idx_0, ":", row_target_0)
-print("Response:", response_0.json())
+print("\nTest for patient marked as not having cancer:")
+print("\nRequest data simulated from the randomly selected row no.", idx_0, ":", row_target_0)
+print("\nResponse:", response_0.json())
+print()
