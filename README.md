@@ -16,4 +16,4 @@
 * .\src - code for all functions used by pipelines
 * .\tests - pytest code for checking src-code
 * .\notebooks - jupyter written DS ideas implemented into production project
-* .\pipelines_scripts - model training pipeline and Flask application with REST API server for pre-trained model, simulator of REST API client request (requests trigger)
+* .\pipelines_scripts - model training pipeline and Flask application with REST API server for pre-trained model, as well as self-written simulator of REST API client requesting ML-model predict (requests trigger)
