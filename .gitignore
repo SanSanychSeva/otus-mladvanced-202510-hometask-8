@@ -12,3 +12,7 @@ wheels/
 # Pytest generated files
 .pytest_cache/
 .coverage
+
+# Models and other ML-objects save-files
+*.bin
+*.npy

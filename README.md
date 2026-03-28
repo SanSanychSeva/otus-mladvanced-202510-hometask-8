@@ -4,7 +4,7 @@
 2) functions tests for pytest are added to tests-folder
 3) e2e training pipeline is placed in pipelines-folder 
 4) stand-alone offline inference using saved model implemented in src-folder, covered by pytest
-5) REST API script is ready too
+5) REST API server script is ready and tested by self-written trigger script too
 
 ## Now working on the dockering REST API publishing of the model inference
 
@@ -16,3 +16,4 @@
 * .\src - code for all functions used by pipelines
 * .\tests - pytest code for checking src-code
 * .\notebooks - jupyter written DS ideas implemented into production project
+* .\pipelines_scripts - model training pipeline and Flask application with REST API server for pre-trained model, simulator of REST API client request (requests trigger)
