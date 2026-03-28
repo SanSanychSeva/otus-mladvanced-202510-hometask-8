@@ -64,6 +64,8 @@ logger.info(
     "printing the model scores on training and validation data, and the location of the saved model..."
 )
 # print the model scores on training and validation data, and the location of the saved model
+print('-' * 50)
+print('RESULTS SUMMARY')
 print("\nFYI:", MODEL_SHORT_NAME, "model has been trained OK:")
 print("the model score on training data was :", model.score(X_train, y_train))
 print("the model score on validation data is:", model.score(X_val, y_val))
@@ -71,4 +73,4 @@ print(
     "the trained model has been saved using joblib dump in this folder:",
     os.path.join(PROJECT_FOLDER, MODELS_FOLDER),
 )
-print("it was an MLOps-pleasure working with you!  See yah...\n")
+print("it was an MLOps-pleasure working with you!  See yah...\n\n")
